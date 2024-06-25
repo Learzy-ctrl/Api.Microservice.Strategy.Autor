@@ -24,7 +24,8 @@ namespace Api.Microservice.Strategy.Autor.Aplicacion
                 AutorLibroGuid = Convert.ToString(Guid.NewGuid())
             };
             await _contexto.AutorLibros.AddAsync(autorLibro);
-            return await _contexto.SaveChangesAsync();
+            await _contexto.SaveChangesAsync();
+            return autorLibro.AutorLibroGuid;
         }
     }
 }
